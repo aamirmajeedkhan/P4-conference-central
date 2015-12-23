@@ -53,11 +53,16 @@ What ways to solve it did you think of?
 
 The endpoint 'getTypewithTime' use the above approach.
 
-## Additional Queries
+### Additional Queries
 
 `gethourSessions()` - Return session which are of an hour or less.
 
 `querySessions()` - Given a `SessionQueryForms`, returns a set of filtered sessions.
 
+## Task 4 : Adding Task 
+- `getFeaturedSpeaker()`
+   When a new session is added to a conference if there is more than one session
+   by this speaker return featured speaker / sessions from memcache.
+   
 [1]: https://cloud9-conf.appspot.com/_ah/api/explorer
 [2]: https://cloud9-conf.appspot.com/#/
