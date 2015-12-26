@@ -21,3 +21,58 @@ indexes:
   - name: typeOfSession
   - name: date
   - name: startTime
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: maxAttendees
+  - name: name
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: topics
+  - name: name
+
+- kind: Conference
+  properties:
+  - name: city
+  - name: month
+  - name: name
+
+- kind: Conference
+  properties:
+  - name: month
+  - name: maxAttendees
+  - name: name
+
+- kind: Session
+  properties:
+  - name: duration
+  - name: name
+
+- kind: Session
+  properties:
+  - name: typeOfSession
+  - name: name
+
+- kind: Session
+  properties:
+  - name: speaker
+  - name: typeOfSession
+  - name: name
+
+- kind: Session
+  properties:
+  - name: speaker
+  - name: name
+
+- kind: Session
+  properties:
+  - name: startTime
+  - name: name
+
+- kind: Session
+  properties:
+  - name: date
+  - name: name
