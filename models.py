@@ -111,10 +111,10 @@ class ConferenceQueryForm(messages.Message):
 class ConferenceQueryForms(messages.Message):
     """ConferenceQueryForms -- multiple ConferenceQueryForm inbound form message"""
     filters = messages.MessageField(ConferenceQueryForm, 1, repeated=True)
-    
+
 class StringMessage(messages.Message):
     """StringMessage-- outbound (single) string message"""
-    data = messages.StringField(1, required=True)  
+    data = messages.StringField(1, required=True)
 
 class SessionType(messages.Enum):
     """SessionType --  enumeration value"""
@@ -125,17 +125,17 @@ class SessionType(messages.Enum):
 
 class Speaker(ndb.Model):
     """Speaker -- Speaker object"""
-    name = ndb.StringProperty(required=True)          
+    name = ndb.StringProperty(required=True)
 
 class Session(ndb.Model):
     """Session -- Session object"""
     name            = ndb.StringProperty(required=True)
     highlights      = ndb.StringProperty()
     speaker         = ndb.StructuredProperty(modelclass=Speaker, required=True)
-    duration        = ndb.IntegerProperty()    
+    duration        = ndb.IntegerProperty()
     typeOfSession   = ndb.StringProperty(default='NOT_SPECIFIED')
     date            = ndb.DateProperty(required=True)
-    startTime       = ndb.TimeProperty(required=True)    
+    startTime       = ndb.TimeProperty(required=True)
 
 class SessionForm(messages.Message):
     """ SessionForm - Session outbound form message """
@@ -143,7 +143,7 @@ class SessionForm(messages.Message):
     highlights     = messages.StringField(2)
     speaker        = messages.StringField(3)
     duration       = messages.IntegerField(4, variant=messages.Variant.INT32)
-    typeOfSession  = messages.EnumField('SessionType', 5)    
+    typeOfSession  = messages.EnumField('SessionType', 5)
     date           = messages.StringField(6)
     startTime      = messages.StringField(7)
     websafeKey     = messages.StringField(8)
