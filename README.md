@@ -28,13 +28,14 @@ Though all functionality can be available using [API Explorer][1]
 - Session:
     - is a sibling of Conference
     - contains a Speaker (structured property)
+	- duration is int to represent minutes. int helps to run boundary queries.
+	- date is date property , again to help in queries , represent as  YYY-MM-DD.
+	- startTime is time property represent as HH:MM, that will help run time related queries.
 - Speaker:
     - is a structured property. 
 
+Session have speakers that are unregistered users represent as Structure property.
 Conference was considered as an ancestor of Session so it use the conference key to obtain all sessions registered in the conference.
-
-Note:
-- Date, YYY-MM-DD, or a time, HH:MM, were updated to to use DateProperty and TimeProperty.
 
 ## Task 2:
 Suggested endpoints are implemented and can be accessed using [API expolrer][1].
@@ -64,5 +65,21 @@ The endpoint 'getTypewithTime' use the above approach.
    When a new session is added to a conference if there is more than one session
    by this speaker return featured speaker / sessions from memcache.
    
+# Run Conference Central Locally
+1. Update the value of `application` in `app.yaml` to the app ID you
+   setup in Google App Engine console.
+1. Update the values of respective client IDs in 'setting.py'. Again these clientIDs registered in the
+   [Developer Console][3].
+1. Update the value of CLIENT_ID in `static/js/app.js` to the Web client ID
+1. Run the app with the Google App Engine launcher availbale at [APP Engine SDK][4].Now check the application by visiting your local server's address (by default [localhost:8080][5].)
+1. (optional) Test [endpoints][6]. 
+   
 [1]: https://cloud9-conf.appspot.com/_ah/api/explorer
 [2]: https://cloud9-conf.appspot.com/#/
+[3]: https://console.developers.google.com
+[4]: https://cloud.google.com/appengine/downloads?hl=en#Google_App_Engine_SDK_for_Python
+[5]: http://localhost:8080
+[6]: http://localhost:8080/_ah/api/explorer
+
+
+
