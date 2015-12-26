@@ -72,7 +72,7 @@ The endpoint 'getTypewithTime' use the above approach.
    [Developer Console][3].
 1. Update the value of CLIENT_ID in `static/js/app.js` to the Web client ID
 1. Run the app with the Google App Engine launcher availbale at [APP Engine SDK][4].Now check the application by visiting your local server's address (by default [localhost:8080][5].)
-1. (optional) Test [endpoints][6]. 
+1. (optional) Test endpoint in  [API Explorer][6]. 
    
 [1]: https://cloud9-conf.appspot.com/_ah/api/explorer
 [2]: https://cloud9-conf.appspot.com/#/
